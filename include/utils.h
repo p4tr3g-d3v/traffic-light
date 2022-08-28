@@ -13,10 +13,10 @@
 void traffic_blink(uint32_t gpio_channel, uint16_t gpios);
 void traffic_delay(int d);
 
-void clock_setup(void);
-void gpio_setup(void);
-void i2c_setup(void);
-void usart_setup(void);
+void clock_setup();
+void gpio_setup();
+void i2c_setup();
+void usart_setup();
 
 int _write(int fd, char *ptr, int len);
 

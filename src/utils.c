@@ -38,7 +38,7 @@ void traffic_delay(int d)
 }
 
 // Setup clock`s
-void clock_setup(void)
+void clock_setup()
 {
   // Enable clock per channel
   rcc_periph_clock_enable(RCC_GPIOA);
@@ -49,7 +49,7 @@ void clock_setup(void)
   rcc_periph_clock_enable(RCC_USART1);
 }
 // GPIO Setup
-void gpio_setup(void)
+void gpio_setup()
 {
   // i2c setup
   gpio_mode_setup(GPIOB, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO6 | GPIO7);
@@ -75,7 +75,7 @@ void gpio_setup(void)
 
 #define I2C_ADDRESS 0x15 //! change
 
-void i2c_setup(void)
+void i2c_setup()
 {
   i2c_peripheral_disable(I2C1);                                  // Вырубаем перефирию
   i2c_reset(I2C1);                                               // Сбрасываем
@@ -86,7 +86,7 @@ void i2c_setup(void)
   i2c_peripheral_enable(I2C1);                                   // Включаем переферию
   i2c_enable_ack(I2C1);                                          // Отвечаем при опросе
 }
-void usart_setup(void)
+void usart_setup()
 {
   usart_set_baudrate(USART1, 115200);
   usart_set_databits(USART1, 8);
