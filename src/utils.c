@@ -132,7 +132,7 @@ void i2c1_ev_isr(void)
         rb = in_buffer[idx - 1];
 
       // other: apped to buffer
-    }
+    }!:
     else if (rb)
     {
       *rb++ = b;
