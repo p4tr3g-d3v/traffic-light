@@ -13,6 +13,8 @@
 #define I2C_IN_BUFFER_SIZE 2
 #define I2C_IN_BUFFER_COUNT 2
 
+#define I2C_ADDRESS 0x15 //! change
+
 static uint8_t in_buffer[I2C_IN_BUFFER_COUNT][I2C_IN_BUFFER_SIZE+1] = {0};
 static volatile uint8_t in_buffer_state[I2C_IN_BUFFER_COUNT] = {0};
 

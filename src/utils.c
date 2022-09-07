@@ -74,8 +74,6 @@ void gpio_setup(void)
   // UART setup end
 }
 
-#define I2C_ADDRESS 0x15 //! change
-
 void i2c_setup(void)
 {
   i2c_peripheral_disable(I2C1);                                  // Вырубаем перефирию
@@ -132,7 +130,7 @@ void i2c1_ev_isr(void)
         rb = in_buffer[idx - 1];
 
       // other: apped to buffer
-    }!:
+    }
     else if (rb)
     {
       *rb++ = b;
