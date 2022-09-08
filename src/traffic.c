@@ -70,7 +70,7 @@ void traffic_manual(unsigned char d1, unsigned char d2){
   case 3:
   gpio_set(gpioa, green_1);
     break;
-
+  }
   switch (d2){
   case 1:
   gpio_set(gpioa, red_2);
@@ -83,21 +83,6 @@ void traffic_manual(unsigned char d1, unsigned char d2){
     break;
   }
 }
-}
-
-// void traffic_manual(){
-//   gpio_set(gpioa, red_1 | red_2 | yellow_1 | yellow_2 | green_1 | green_2);
-// }
-
-// void traffic_manual(int r1,int r2, int y1,int y2,int g1,int g2)
-// {
-//   if (r1 == 0) {gpio_clear(gpioa, red_1);} else{gpio_set(gpioa, red_1);}
-//   if (r2 == 0) {gpio_clear(gpioa, red_2);} else{gpio_set(gpioa, red_2);}
-//   if (y1 == 0) {gpio_clear(gpioa, yellow_1);} else{gpio_set(gpioa, yellow_1);}
-//   if (y2 == 0) {gpio_clear(gpioa, yellow_2);} else{gpio_set(gpioa, yellow_2);}
-//   if (g1 == 0) {gpio_clear(gpioa, green_1);} else{gpio_set(gpioa, green_1);}
-//   if (g2 == 0) {gpio_clear(gpioa, green_2);} else{gpio_set(gpioa, green_2);}
-// }
 
 void traffic_clear(void){
   gpio_clear(gpioa, red_1 | red_2 | yellow_1 | yellow_2 | green_1 | green_2);
