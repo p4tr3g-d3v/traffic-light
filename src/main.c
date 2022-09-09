@@ -4,12 +4,18 @@
 unsigned char traffic_status = 0x00;
 unsigned char traffic_directions = 0x00;
 
+
+
+static inline uint8_t read_gpio_value() {
+	return ~(gpio_get(GPIOB, GPIO12|GPIO13|GPIO14|GPIO15)>>12)&0x0F;
+}
+
 int main(void)
 {
   rcc_clock_setup_pll(&rcc_hse_25mhz_3v3[RCC_CLOCK_3V3_84MHZ]);
   clock_setup();
   gpio_setup(); //* Traffic pins PA(0-6)
-  i2c_setup(); //! Set address in utils.h
+  i2c_setup(I2C_ADDRESS + read_gpio_value() + 1); //! Set address in utils.h
   usart_setup();
 
   while (1)
@@ -36,6 +42,7 @@ int main(void)
     }
   }
 }
+
 
 void blink_led(){
   for(int i = 0; i<4; i ++){

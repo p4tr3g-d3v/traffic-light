@@ -36,7 +36,7 @@ void gpio_setup(void)
   // UART setup end
 }
 
-void i2c_setup(void)
+void i2c_setup(uint8_t addr)
 {
   i2c_peripheral_disable(I2C1);                                  // Вырубаем перефирию
   i2c_reset(I2C1);                                               // Сбрасываем

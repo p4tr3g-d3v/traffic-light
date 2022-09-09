@@ -23,7 +23,7 @@ void traffic_delay(int d);
 
 void clock_setup(void);
 void gpio_setup(void);
-void i2c_setup(void);
+void i2c_setup(uint8_t addr);
 void usart_setup(void);
 
 void i2c1_ev_isr(void);
